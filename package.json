@@ -1,0 +1,34 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd ui && npm start",
+    "start": "node -r dotenv/config ./bin/www",
+    "server": "nodemon",
+    "dev": "concurrently -n api,ui --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ui && npm run build --prefix ui"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.5",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "connect-redis": "^4.0.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.2",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
+    "knex": "^0.21.1",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^8.0.3",
+    "redis": "^3.0.2",
+    "uuidv4": "^6.2.6",
+    "youtube-dl": "^3.0.2"
+  }
+}
